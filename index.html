@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+<script>
+var flag4 = 0; // flag for task 4 part 1.
+var flag5 = 0; // flag for task 4 part 2.
+var cel;
+var fah;
+function celsiusToFahrenheit() {
+flag4 = flag4 + 1;
+cel= document.getElementById("celsius").value;
+  var celInF = (cel*9)/5 + 32;
+  alert(cel + '°C is ' + celInF + '°F');
+  if (flag4 == 3)
+    {
+          document.getElementById("button3").disabled = true; 
+    document.getElementById("celsius").disabled = true; 
+	  alert("You have finished your 3 chances");
+    }
+}
+
+function fahrenheitToCelsius() {
+flag5 = flag5 + 1;
+fah= document.getElementById("fahrenheit").value;
+
+  var fahInC = ((fah - 32)*5)/9;
+  alert(fah + '°F is ' + fahInC + '°C');
+  if (flag5 == 3)
+    {
+          document.getElementById("button4").disabled = true; 
+    document.getElementById("fahrenheit").disabled = true; 
+	  alert("You have finished your 3 chances");
+    }
+}
+
+var flag2 = 0; // flag used for task 3 for area and circumference.
+var radius; // radius taken from the user.
+function calcGeometry() {
+flag2 = flag2 + 1;
+radius = document.getElementById("radius").value;
+  var circumference = Math.PI * 2*radius;
+  alert("The circumference is " + circumference);
+  var area = Math.PI * radius*radius;
+  alert("area is " + area);
+    if (flag2 == 3)
+    {
+          document.getElementById("button2").disabled = true; 
+    document.getElementById("radius").disabled = true; 
+	  alert("You have finished your 3 chances");
+    }
+}
+var flag1= 0; //flag for amount consumed
+var age; // age of the user
+var amount; // amount consumed by user.
+function calculateSupply() {
+flag1 = flag1 + 1;
+age = document.getElementById("age").value;
+amount = document.getElementById("amount").value;
+  var max = 100; // maximus age of the user.
+  var total = (amount * 365) * (max - age);
+  var message = 'You will eat ' + total + ' snacks until the age of  ' + max;
+  alert(message);
+      if (flag1 == 3)
+    {
+          document.getElementById("button1").disabled = true; 
+    document.getElementById("age").disabled = true; 
+	    document.getElementById("amount").disabled = true; 
+		alert("You have finished your 3 chances");
+    }
+
+}
+var flag = 0; //flag for age calculator.
+function calculateAge()
+{
+flag = flag + 1;
+var dob = document.getElementById('lastReporteddate').value;
+var now = new Date();
+ if ( dob > 1000 && dob <= now.getFullYear())
+     {
+      
+        var age = now.getFullYear() - dob;
+       if (age != 0)
+       {
+       var ages = age - 1;
+       
+       alert(age+' or '+ ages);
+       }
+       else
+       {
+       alert (age);
+       }
+       }
+       else
+       {
+       alert('Please type valid date or which is equal to our lower then the current date');
+       }
+    if (flag == 3)
+    {
+          document.getElementById("button").disabled = true; 
+    document.getElementById("lastReporteddate").disabled = true; 
+	alert("You have finished your 3 chances");
+    }
+
+
+}
+</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/global/images/favicon.png" type="image/png">
+    <title>Akshay &amp; Shetty</title>
+    <link href="assets/global/css/style.css" rel="stylesheet">
+    <link href="assets/global/css/theme.css" rel="stylesheet">
+    <link href="assets/global/css/ui.css" rel="stylesheet">
+    <link href="assets/admin/layout1/css/layout.css" rel="stylesheet">
+    <script src="assets/global/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body class="fixed-topbar fixed-sidebar theme-sdtl color-default">
+    <section>
+      <div class="sidebar">
+        
+        <div class="sidebar-inner">
+          <div class="sidebar-top">
+            <div class="userlogged clearfix">
+              <i class="icon icons-faces-users-01"></i>
+              <div class="user-details">
+                <h4>Akshay Shetty</h4>
+              
+              </div>
+            </div>
+          </div>
+           <ul class="nav nav-sidebar">
+          
+          </ul>
+          <!-- SIDEBAR WIDGET FOLDERS -->
+        </div>
+      </div>
+      <!-- END SIDEBAR -->
+      <div class="main-content">
+        <!-- BEGIN TOPBAR -->
+        <div class="topbar">  </div>
+        <!-- END TOPBAR -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content">
+          <div class="header">
+            <h2><strong>WIRE</strong> &amp; <strong>DATA</strong></h2>
+            <div class="breadcrumb-wrapper">
+              <ol class="breadcrumb">
+                <li><a href="#">ASSIGNMENT</a>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row">
+                <div class="col-md-6 portlets">
+                  <div class="panel">
+                    <div class="panel-header panel-controls">
+                      <h3><strong>Temperature</strong> Convertor</h3>
+                    </div>
+                    <div class="panel-content">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1_1" data-toggle="tab">Celsius</a></li>
+                        <li class=""><a href="#tab1_2" data-toggle="tab">Fahrenheit</a></li>
+                         </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tab1_1">
+                          <div class="row column-seperation">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Celsius to Fahrenheit</label>
+                              <div class="col-sm-9">
+                                <input class="form-control form-white" type="text" id="celsius" placeholder="Type Celsius here">
+								<button type="button" class="btn btn-white" id="button3" onclick ="celsiusToFahrenheit()">Submit</button>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab1_2">
+                        <div class="row column-seperation">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Fahrenheit to Celsius</label>
+                              <div class="col-sm-9">
+                                <input class="form-control form-white" type="text" id="fahrenheit" placeholder="Type Fahrenheit here">
+								<button type="button" class="btn btn-white" id="button4" onclick ="fahrenheitToCelsius()">Submit</button>
+                              
+							 </div>
+                            </div>
+                          </div>
+						</div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				
+				<div class="col-md-6 portlets">
+                  <div class="panel">
+                    <div class="panel-header panel-controls">
+                      <h3><strong>Circumference</strong> Area Finder</h3>
+                    </div>
+                    <div class="panel-content">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1_1" data-toggle="tab">Radius</a></li>
+                       
+                         </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tab1_1">
+                          <div class="row column-seperation">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Enter Radius</label>
+                              <div class="col-sm-9">
+                                <input class="form-control form-white" type="text" id="radius" placeholder="Type Radius">
+								<button type="button" class="btn btn-white" id="button2" onclick ="calcGeometry()">Submit</button>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                                                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="col-md-6 portlets">
+                  <div class="panel">
+                    <div class="panel-header panel-controls">
+                      <h3><strong>Snack</strong> Counter</h3>
+                    </div>
+                    <div class="panel-content">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1_1" data-toggle="tab">Snacks</a></li>
+                       
+                         </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tab1_1">
+                          <div class="row column-seperation">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Enter Age</label>
+                              <div class="col-sm-9">
+                                <input class="form-control form-white" type="text" id="age" placeholder="Type age">
+								</div>
+								<label class="col-sm-3 control-label">Enter Amount</label>
+                              <div class="col-sm-9">
+                                <input class="form-control form-white" type="text" id="amount" placeholder="Type amount">
+								
+								<button type="button" class="btn btn-white" id="button1" onclick ="calculateSupply()">Submit</button>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                                                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				<div class="col-md-6 portlets">
+                  <div class="panel">
+                    <div class="panel-header panel-controls">
+                      <h3><strong>Age</strong> Guesser</h3>
+                    </div>
+                    <div class="panel-content">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1_1" data-toggle="tab">Age</a></li>
+                       
+                         </ul>
+                      <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tab1_1">
+                          <div class="row column-seperation">
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Enter Year</label>
+                              <div class="col-sm-9">
+                                <input class="form-control form-white" type="text" id="lastReporteddate" placeholder="Type age">
+							  
+								<button type="button" class="btn btn-white" id="button" onclick ="calculateAge()">Submit</button>
+                             </div>
+                            </div>
+                          </div>
+                        </div>
+                                                
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            
+          </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+      </div>
+      <!-- END MAIN CONTENT -->
+      <!-- BEGIN BUILDER -->
+      <!--0 END BUILDER -->
+    </section>
+    <!-- BEGIN QUICKVIEW SIDEBAR -->
+      <!-- END SEARCH -->
+    <!-- BEGIN PRELOADER -->
+    <div class="loader-overlay">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+    </div>
+    <!-- END PRELOADER -->
+    <a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a> 
+    <script src="assets/global/plugins/jquery/jquery-1.11.1.min.js"></script>
+    <script src="assets/global/plugins/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/global/plugins/jquery-ui/jquery-ui-1.11.2.min.js"></script>
+    <script src="assets/global/plugins/gsap/main-gsap.min.js"></script>
+    <script src="assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/global/plugins/jquery-cookies/jquery.cookies.min.js"></script> <!-- Jquery Cookies, for theme -->
+    <script src="assets/global/plugins/jquery-block-ui/jquery.blockUI.min.js"></script> <!-- simulate synchronous behavior when using AJAX -->
+    <script src="assets/global/plugins/bootbox/bootbox.min.js"></script> <!-- Modal with Validation -->
+    <script src="assets/global/plugins/mcustom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script> <!-- Custom Scrollbar sidebar -->
+    <script src="assets/global/plugins/bootstrap-dropdown/bootstrap-hover-dropdown.min.js"></script> <!-- Show Dropdown on Mouseover -->
+    <script src="assets/global/plugins/retina/retina.min.js"></script> <!-- Retina Display -->
+    <script src="assets/global/plugins/select2/select2.min.js"></script> <!-- Select Inputs -->
+    <script src="assets/global/plugins/icheck/icheck.min.js"></script> <!-- Checkbox & Radio Inputs -->
+    <script src="assets/global/plugins/backstretch/backstretch.min.js"></script> <!-- Background Image -->
+    <script src="assets/global/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> <!-- Animated Progress Bar -->
+    <script src="assets/global/plugins/charts-chartjs/Chart.min.js"></script>
+   <script src="assets/global/js/application.js"></script> <!-- Main Application Script -->
+    <script src="assets/global/js/plugins.js"></script> <!-- Main Plugin Initialization Script -->
+    <script src="assets/global/js/widgets/notes.js"></script> <!-- Notes Widget -->
+    <script src="assets/admin/layout1/js/layout.js"></script>
+  </body>
+
+</html>
